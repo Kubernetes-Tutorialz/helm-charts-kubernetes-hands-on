@@ -3,21 +3,15 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: giropops
+    app: nginx
     run: nginx
-  name: primeiro-deployment
+  name: nginxhelm
   namespace: default
 spec:
-  clusterIP: 10.102.126.165
-  clusterIPs:
-  - 10.102.126.165
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
-  - nodePort: 32573
+  - name: nginxhelm
     port: 80
     protocol: TCP
     targetPort: 80

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: helm_chart_nginx
-description: A Helm chart for Kubernetes
+description: A Helm chart for Kubernetes with NGINX webserver
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -21,3 +21,17 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
+keywords:
+  - "DevOps"
+  - "Charts"
+  - "Cloud Native"
+home: https://github.com/Kubernetes-Tutorialz/helm-charts-kubernetes-hands-on
+sources:
+  - "https://amaurybsouza.medium.com/"
+maintainers:
+  - name: "Amaury Borges Souza"
+    email: "amauryborgesouza@gmail.com"
+deprecated: false
+
+
+

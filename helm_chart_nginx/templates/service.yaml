@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm_chart_nginx.fullname" . }}
+  name: {{ .Values.name }}
   labels:
     {{- include "helm_chart_nginx.labels" . | nindent 4 }}
 spec:

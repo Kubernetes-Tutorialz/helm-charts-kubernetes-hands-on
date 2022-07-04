@@ -7,6 +7,7 @@
   - [O que é Helm](#o-que-é-helm)
   - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
     - [O comando](#o-comando)
+    - [Visualizando a estrutura criada](#visualizando-a-estrutura-criada)
   - [Hora de fazer o deploy](#hora-de-fazer-o-deploy)
 
 ## O que é Helm
@@ -18,7 +19,29 @@ Para que possamos criar nossa estrutura do Helm Chart completa, existe um comand
 
 ### O comando
 
--  `$ helm create nginxwebserver`
+-  `$ helm create nginxcharts`
+
+### Visualizando a estrutura criada
+
+```bash
+# tree nginxcharts/
+nginxcharts/
+├── charts
+├── Chart.yaml
+├── templates
+│   ├── deployment.yaml
+│   ├── _helpers.tpl
+│   ├── hpa.yaml
+│   ├── ingress.yaml
+│   ├── NOTES.txt
+│   ├── serviceaccount.yaml
+│   ├── service.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml
+
+3 directories, 10 files
+```
 
 ## Hora de fazer o deploy
 

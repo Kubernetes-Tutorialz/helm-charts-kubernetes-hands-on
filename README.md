@@ -11,7 +11,6 @@
       - [Checking the POD's:](#checking-the-pods)
       - [Checking the services:](#checking-the-services)
     - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
-    - [O comando usado](#o-comando-usado)
     - [Visualizando a estrutura criada](#visualizando-a-estrutura-criada)
     - [Hora de fazer o deploy](#hora-de-fazer-o-deploy)
 
@@ -81,19 +80,11 @@ nginxhelm             NodePort    10.106.167.203   <none>        80:31355/TCP   
 primeiro-deployment   NodePort    10.102.126.167   <none>        80:32573/TCP   29h
 ```
 
-Agora que criamos, vamos executar alguns `kubectl` para verificar se esta tudo certo.
-
-- Pegando o `deployment` criado:
-
-
-
-Para que tenhamos sucesso na util
+Veja que eu fiz deploy dos arquivos manualmente, ou seja, tive que rodar o comando `kubectl` para subir os arquivos `YML` de nome`deployments`, `services`. A ideia do Helm comeca agora, pois ele vai entrar como um gerenciador de pacotes dentro do Kubernetes.
  
 ### Criando nossa estrutura do Helm
 
 Para que possamos criar nossa estrutura do Helm Chart completa, existe um comando que faz isso de forma mais legal e automatizada.
-
-### O comando usado
 
 `$ helm create nginxcharts`
 

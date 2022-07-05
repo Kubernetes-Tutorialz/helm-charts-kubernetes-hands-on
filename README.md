@@ -7,6 +7,7 @@
   - [What is Helm](#what-is-helm)
   - [Installing Helm](#installing-helm)
     - [Before to proceed, test your application](#before-to-proceed-test-your-application)
+      - [Checking the deployment:](#checking-the-deployment)
       - [Checking the POD's:](#checking-the-pods)
     - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
     - [O comando usado](#o-comando-usado)
@@ -38,7 +39,7 @@ Para que nao tenhamos surpresas durante o deploy usando Helm Charts, temos que t
 
 `kubectl create services -f nginx_helm_service.yml`
 
-#### Checking the POD's:
+#### Checking the deployment:
 
 ```bash
 # kubectl get deployments.apps 
@@ -48,6 +49,23 @@ nginx-example         1/1     1            1           30h
 nginx02               1/1     1            1           19h
 nginx03               1/1     1            1           10h
 primeiro-deployment   1/1     1            1           29h
+```
+
+#### Checking the POD's:
+
+```bash
+# kubectl get pods
+NAME                                   READY   STATUS    RESTARTS        AGE
+busybox                                1/1     Running   28 (20m ago)    28h
+busybox-configmap-file                 1/1     Running   105 (14m ago)   7d11h
+grafana-labz-6db6bc44bb-xshdl          1/1     Running   0               2d8h
+init-demo                              1/1     Running   0               3d21h
+nginx                                  1/1     Running   2 (4d4h ago)    12d
+nginx-example-747ddb8bc7-tmp8n         1/1     Running   0               30h
+nginx02-7d786956cd-gh2pp               1/1     Running   0               19h
+nginx03-5999959778-bt588               1/1     Running   0               10h
+primeiro-deployment-66b459c7d8-jkzqh   1/1     Running   0               29h
+webserver                              1/1     Running   1 (4d4h ago)    9d
 ```
 
 Agora que criamos, vamos executar alguns `kubectl` para verificar se esta tudo certo.

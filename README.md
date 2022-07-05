@@ -6,6 +6,7 @@
   - [Sumario](#sumario)
   - [What is Helm](#what-is-helm)
   - [A graduated project (CNCF)](#a-graduated-project-cncf)
+  - [Pre-requisites](#pre-requisites)
   - [Installing Helm](#installing-helm)
     - [Before to proceed, test your application](#before-to-proceed-test-your-application)
       - [Checking the deployment:](#checking-the-deployment)
@@ -23,6 +24,13 @@ O [Helm](https://www.cncf.io/projects/helm/) é um projeto graduado da CNCF, que
 ## A graduated project (CNCF)
 
 Estamos falando de um projeto bem legal da CNCF, então é justo a gente abordar um pouco sobre Cloud Native que é uma iniciativa TOP de mercado, com muitos projetos legais que estão classificados em graduados, incubados e sandbox. O próprio Kubernetes é mantido pela CNFF, graduado e em constante evolução pela comunidade. Aqui na página do Helm do [GitHub](https://github.com/helm/helm) possui mais detalhes sobre a ferramenta, commits, PRs e issues que estão sendo tratadas pela comunidade.
+
+## Pre-requisites
+
+Antes de prosseguir com nosso teste de aplicação usando NGINX, precisamos certificar dos seguintes pontos:
+
+- Necessário um cluster de Kubernetes para que você possa avançar.
+- Ter o conhecimento básico em Kubernetes e Linux como base.
 
 ## Installing Helm
 

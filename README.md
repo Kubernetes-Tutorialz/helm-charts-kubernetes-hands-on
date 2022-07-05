@@ -36,18 +36,18 @@ Antes de prosseguir com nosso teste de aplicação usando NGINX, precisamos cert
 
 Para se fazer a instalação do Helm nos sistemas operacionais basta seguir os passos abaixo, é bem simples.
 
-From Script (Linux)
+- From Script (Linux)
 
 ```bash
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 $ chmod 700 get_helm.sh
 $ ./get_helm.sh
 ```
-From Homebrew (macOS)
+- From Homebrew (macOS)
 
 `brew install helm`
 
-From Chocolatey (Windows)
+- From Chocolatey (Windows)
 
 `choco install kubernetes-helm`
 

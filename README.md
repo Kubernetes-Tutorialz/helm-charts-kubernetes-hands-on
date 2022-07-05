@@ -5,9 +5,10 @@
 - [Helm](#helm)
   - [Sumario](#sumario)
   - [What is Helm](#what-is-helm)
-    - [Installing Helm](#installing-helm)
-    - [Antes de tudo, teste sua aplicacao](#antes-de-tudo-teste-sua-aplicacao)
-  - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
+  - [Installing Helm](#installing-helm)
+    - [Before to proceed, test your application](#before-to-proceed-test-your-application)
+      - [Checking the POD's:](#checking-the-pods)
+    - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
     - [O comando usado](#o-comando-usado)
     - [Visualizando a estrutura criada](#visualizando-a-estrutura-criada)
   - [Hora de fazer o deploy](#hora-de-fazer-o-deploy)
@@ -15,7 +16,7 @@
 ## What is Helm
 O [Helm](https://www.cncf.io/projects/helm/) é um projeto graduado da CNCF, que seu proposito é atuar como um gerenciador de pacotes criado para facilitar a instalação de aplicações e suas dependências no Kubernetes. Podemos comparar o Helm com o `apt-get` do Debian, pois com apenas um comando você consegue instalar aplicações e suas dependencias no Kubernetes e ainda, fazer o gerenciamento de suas versões, podendo fazer o upgrade ou downgrade sem maiores problemas e rapidamente. O Helm não é somente utilizado para fazer a instalação de aplicativos de terceiros, você consegue criar charts, que são os pacotes que o Helm utiliza para a instalação e configuração do aplicativo no Kubernetes. O chart é composto por arquivos que definem como e qual deve ser o comportamento da aplicação dentro do cluster. É no chart que você define o seu `deployment`, o `service`, `ingress` e qualquer outra coisa necessária para a instalação e configuração da app desejada, e para isso, utilizamos os templates, que serão abordados mais para frente.
 
-### Installing Helm
+## Installing Helm
 
 Para se fazer a instalação do Helm no LINUX, basta seguir os passos abaixo, é bem simples, vamos optar por fazer a instalação via script.
 
@@ -25,11 +26,39 @@ $ chmod 700 get_helm.sh
 $ ./get_helm.sh
 ```
 
-### Antes de tudo, teste sua aplicacao 
+### Before to proceed, test your application
+
+Para que nao tenhamos surpresas durante o deploy usando Helm Charts, temos que testar nossa aplicacao para garantir que TUDO esteja funcional demais. Para isso, com o cluster já em execução, execute os comando abaixo para que você possa deployar o `deployment.yml` e o outro arquivo `service.yml`. Vamos usar aqui como exemplo um servidor web `NGINX` para que possamos exemplificar da melhor forma o workflow de deploy do Helm Chart.
+
+- Deployando primeiro o arquivo de `deployment`:
+
+`kubectl create deployment nginx03 --image=nginx`
+
+- Criando nosso arquivo de `services`:
+
+`kubectl create services -f nginx_helm_service.yml`
+
+#### Checking the POD's:
+
+```bash
+# kubectl get deployments.apps 
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+grafana-labz          1/1     1            1           2d8h
+nginx-example         1/1     1            1           30h
+nginx02               1/1     1            1           19h
+nginx03               1/1     1            1           10h
+primeiro-deployment   1/1     1            1           29h
+```
+
+Agora que criamos, vamos executar alguns `kubectl` para verificar se esta tudo certo.
+
+- Pegando o `deployment` criado:
+
+
 
 Para que tenhamos sucesso na util
  
-## Criando nossa estrutura do Helm
+### Criando nossa estrutura do Helm
 
 Para que possamos criar nossa estrutura do Helm Chart completa, existe um comando que faz isso de forma mais legal e automatizada.
 

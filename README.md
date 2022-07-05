@@ -5,7 +5,7 @@
 - [Helm](#helm)
   - [Sumario](#sumario)
   - [What is Helm](#what-is-helm)
-  - [CNCF graduated project](#cncf-graduated-project)
+  - [A graduated project (CNCF)](#a-graduated-project-cncf)
   - [Installing Helm](#installing-helm)
     - [Before to proceed, test your application](#before-to-proceed-test-your-application)
       - [Checking the deployment:](#checking-the-deployment)
@@ -20,7 +20,7 @@
 ## What is Helm
 O [Helm](https://www.cncf.io/projects/helm/) é um projeto graduado da CNCF, que seu proposito é atuar como um gerenciador de pacotes criado para facilitar a instalação de aplicações e suas dependências no Kubernetes. Podemos comparar o Helm com o `apt-get` do Debian, pois com apenas um comando você consegue instalar aplicações e suas dependencias no Kubernetes e ainda, fazer o gerenciamento de suas versões, podendo fazer o upgrade ou downgrade sem maiores problemas e rapidamente. O Helm não é somente utilizado para fazer a instalação de aplicativos de terceiros, você consegue criar charts, que são os pacotes que o Helm utiliza para a instalação e configuração do aplicativo no Kubernetes. O chart é composto por arquivos que definem como e qual deve ser o comportamento da aplicação dentro do cluster. É no chart que você define o seu `deployment`, o `service`, `ingress` e qualquer outra coisa necessária para a instalação e configuração da app desejada, e para isso, utilizamos os templates, que serão abordados mais para frente.
 
-## CNCF graduated project
+## A graduated project (CNCF)
 
 Estamos falando de um projeto bem legal da CNCF, então é justo a gente abordar um pouco sobre Cloud Native que é uma iniciativa TOP de mercado, com muitos projetos legais que estão classificados em graduados, incubados e sandbox. O próprio Kubernetes é mantido pela CNFF, graduado e em constante evolução pela comunidade. Aqui na página do Helm do [GitHub](https://github.com/helm/helm) possui mais detalhes sobre a ferramenta, commits, PRs e issues que estão sendo tratadas pela comunidade.
 

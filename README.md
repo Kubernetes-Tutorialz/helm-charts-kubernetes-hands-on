@@ -20,11 +20,11 @@ O [Helm](https://www.cncf.io/projects/helm/) é um projeto graduado da CNCF, que
 
 ## CNCF graduated project
 
-Estamos falando de um projeto bem legal da CNCF, então é justo a gente abordar um pouco sobre Cloud Native que é uma iniciativa TOP de mercado, com muitos projetos legais que estão classificados em graduados, incubados e sandbox. O próprio Kubernetes é mantido pela CNFF, graduado e em constante evolução pela comunidade.
+Estamos falando de um projeto bem legal da CNCF, então é justo a gente abordar um pouco sobre Cloud Native que é uma iniciativa TOP de mercado, com muitos projetos legais que estão classificados em graduados, incubados e sandbox. O próprio Kubernetes é mantido pela CNFF, graduado e em constante evolução pela comunidade. Aqui na página do Helm do [GitHub](https://github.com/helm/helm) possui mais detalhes sobre a ferramenta, commits, PRs e issues que estão sendo tratadas pela comunidade.
 
 ## Installing Helm
 
-Para se fazer a instalação do Helm no LINUX, basta seguir os passos abaixo, é bem simples, vamos optar por fazer a instalação via script.
+Para se fazer a instalação do Helm no LINUX, basta seguir os passos abaixo, é bem simples, vamos optar por fazer a instalação via script. Para outros sistemas, acesse esse link aqui e faça a instalação de acordo com seu sistema utilizado.
 
 ```bash
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3

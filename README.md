@@ -59,9 +59,71 @@ Para que nao tenhamos surpresas durante o deploy usando Helm Charts, temos que t
 
 `kubectl create deployment nginx03 --image=nginx`
 
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 1
+  labels:
+    app: nginx02
+  name: nginx02
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nginx02
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx02
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: nginx
+        resources: 
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+```
+
 - Criando nosso arquivo de `services`:
 
 `kubectl create services -f nginx_helm_service.yml`
+
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+    run: nginx
+  name: nginxhelm
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ports:
+  - name: nginxhelm
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: nginx
+  sessionAffinity: None
+  type: NodePort
+```
 
 #### Checking the deployment:
 

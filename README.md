@@ -15,6 +15,7 @@
     - [Criando nossa estrutura do Helm](#criando-nossa-estrutura-do-helm)
     - [Visualizando a estrutura criada](#visualizando-a-estrutura-criada)
     - [Hora de fazer o deploy](#hora-de-fazer-o-deploy)
+  - [Check the NGINX running on the browser](#check-the-nginx-running-on-the-browser)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -210,6 +211,20 @@ NOTES:
   export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services nginxcharts-1656402303)
   export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT
+```
+
+## Check the NGINX running on the browser
+
+Agora que efetuamos nosso deployment com Helm Chart, temos que verificar se esta espelhando corretamente no browser. Para isso, basta digitar o Ip do seu cluster + a porta que esta sendo usada pelo `services`.
+
+```html
+Welcome to nginx!
+If you see this page, the nginx web server is successfully installed and working. Further configuration is required.
+
+For online documentation and support please refer to nginx.org.
+Commercial support is available at nginx.com.
+
+Thank you for using nginx.
 ```
 
 ## Contributing

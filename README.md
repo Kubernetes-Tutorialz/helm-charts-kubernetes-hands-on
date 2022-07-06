@@ -65,8 +65,8 @@ kind: Deployment
 metadata:
   generation: 1
   labels:
-    app: nginx02
-  name: nginx02
+    app: nginx03
+  name: nginx03
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -83,7 +83,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx02
+        app: nginx03
     spec:
       containers:
       - image: nginx
